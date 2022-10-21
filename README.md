@@ -1,2 +1,2 @@
 # cfg_group_project
-Amelie, Ruth, Helen, Crina and I's team work!
+Amelie, Ruth, Helen, Crina and Angeline's team work!
