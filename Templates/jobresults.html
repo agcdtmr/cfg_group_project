@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+{% block title %}JobResult{% endblock %}
+{% block body %}
+
+<body class="h-100 bg-dark text-light d-flex flex-column justify-content-center align-items-center">
+    <h1 class=" text-light text-capitalize">Our Results</h1>
+    <p><b>Location:</b><span class="text-info"> {{ job_list.city}}</span></p>
+    <p><b>Title:</b><span class="text-info"> {{ job_list.job_title}}</span></p>
+    <p><b>Company:</b><span class="text-info"> {{ job_list.employer_name}}</span></p>
+    <p><b>Location:</b><span class="text-info"> {{ job_list.link}}</span></p>
+    <p><b>Expiration Date:</b><span class="text-info"> {{ job_list.exp_date}}</span></p>
+    <div class = "word-wrap: break-word">
+    <p><b>Job Description:</b><span class="text-info">{{ job_list.description}}</span></p>
+    </div>
+
+    <!--possible implementation for of the api results in a table -->
+  <!--
+    <div>
+    {%for job in job_list%}
+     <div>
+         <p>{{job_list.city}}</p>
+         <p>{{job_list.job_title}}</p>
+         <p>{{job_list.jobId}}</p>
+         <p>{{job_list.description}}</p>
+         <p>{{job_list.employer_name}}</p>
+         <p>{{job_list.link}}</p>
+         <p>{{job_list.description}}</p>
+         <p>{{job_list.exp_date}}</p>
+     </div>
+      {%endfor%}
+
+    </div>
+  -->
+<a href="/" role="button" class="btn btn-outline-light">Return to home </a>
+</body>
+</html>
+{% endblock %}
