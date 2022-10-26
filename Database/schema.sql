@@ -1,0 +1,4 @@
+CREATE DATABASE job_search;
+USE job_search;
+CREATE TABLE users (ID INT AUTO_INCREMENT PRIMARY KEY, surname VARCHAR(50), first_name VARCHAR(50),
+ email VARCHAR(100) UNIQUE, password VARCHAR(100));
