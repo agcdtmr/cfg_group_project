@@ -1,0 +1,14 @@
+{%extends 'main.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+
+<div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+    <h1>What would you prefer?</h1>
+    <div>
+        <h3>See the full list</h3>
+        <a role="button" href="/jobs" class="btn btn-outline-info">Full List</a>
+        <h3>Use the filters</h3>
+        <a role="button" href="/filter-jobs" class="btn btn-outline-info">Use Filters</a>
+    </div>
+</div>
+{% endblock%}

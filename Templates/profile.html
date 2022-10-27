@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+  <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="text-center"> Welcome,amazing you</h1>
+    <form action="/logout" method="post">
+      <button type="submit" class="btn btn-outline-info">Logout</button>
+      {% with error_messages = get_flashed_messages(category_filter=['error']) %}
+        {% if error_messages %}
+          <p class="text-danger mt-3">{{ error_messages|join(' • ') }}</p>
+        {% endif %}
+      {% endwith %}
+      {% with info_messages = get_flashed_messages(category_filter=['info']) %}
+        {% if info_messages %}
+          <p class="text-success mt-3">{{ info_messages|join(' • ') }}</p>
+        {% endif %}
+      {% endwith %}
+    </form>
+  </div>
+{% endblock %}
+
