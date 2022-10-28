@@ -1,3 +1,5 @@
+{% from '/macros/job-list.html' import jobList %}
+
 {% extends 'main.html' %}
 {% block title %}JobResult{% endblock %}
 {% block body %}
@@ -5,21 +7,7 @@
 <main class="h-100 bg-dark text-light d-flex flex-column justify-content-center align-items-center">
     <h1 class=" text-light text-capitalize">Our Results</h1>
 
-    <ul>
-        {% for entry in job_list %}
-            <li>
-                <address>Location: {{ entry.city }}</address>
-                <h3>
-                    <a href="{{ entry.link }}">
-                        Title: {{ entry.job_title }}
-                    </a>
-                </h3>
-                <p>Company: {{ entry.employer_name }}</p>
-                <p>Expiration Date: {{ entry.exp_date }}</p>
-                <p>Job Description: {{ entry.description }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+    {{ jobList(job_list) }}
 
     <a href="/" class="btn btn-outline-light">
         Return to home
