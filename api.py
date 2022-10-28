@@ -13,25 +13,19 @@ def get_from_api():
     # }
     response = requests.get('https://www.reed.co.uk/api/1.0/search?keywords=tech',
                auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()
-    for job in response['results']:
 
-        city = job['locationName']
-        job_title = job['jobTitle']
-        jobId = job['jobId']
-        employer_name = job['employerName']
-        link = job['jobUrl']
-        description = job['jobDescription']
-        exp_date = job['expirationDate']
-        data = {
-            "city": city,
-            "job_title": job_title,
-             "jobId ": jobId,
-             "employer_name": employer_name,
-             "link": link,
-             "description": description,
-             "exp_date": exp_date
-                 }
+    data = [{
+        "city": entry['locationName'],
+        "job_title": entry['jobTitle'],
+        "jobId": entry['jobId'],
+        "employer_name": entry['employerName'],
+        "link": entry['jobUrl'],
+        "description": entry['jobDescription'],
+        "exp_date": entry['expirationDate']
+    } for entry in response['results']]
+
     return data
+
 
 #API calls to follow:
 ########################
