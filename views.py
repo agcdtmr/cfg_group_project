@@ -5,7 +5,8 @@ from flask import Blueprint, render_template,jsonify,request,flash, redirect, ur
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from Database.users import add_user, get_user_by_credentials,email_available
 from config import SECRET_KEY
-from api import get_from_api
+from api import get_from_api, get_job_by_title
+
 
 views = Blueprint(__name__, "view")
 
@@ -42,13 +43,17 @@ def job_results():
 
 #jobengine - filter button
 
-@views.post('/jobs-title')
-def job_search_by_title():
-    pass
 
-@views.get('/jobs-title')
+@views.get('/jobs-title-search')
+def job_search_by_title():
+    return render_template("jobs-title-search.html")
+
+
+@views.get('/jobs-title-results')
 def job_result_by_title():
-    pass
+    search_input = request.args.get('job')  # 'job' is from input name attribute from jobs-title-search.html
+    job_list = get_job_by_title(search_input) # a function from api.py
+    return render_template("jobs-title-results.html", data=job_list)
 
 @views.post('/jobs-location')
 def job_search_by_location():

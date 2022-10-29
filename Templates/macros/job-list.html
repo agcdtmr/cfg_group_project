@@ -2,9 +2,9 @@
 
 # This creates a list that is looping inside the job_list
 # Renders a list of all jobs
-{% macro jobList(job_list) %}
+{% macro jobList(data) %}
     <ul>
-        {% for entry in job_list %}
+        {% for entry in data %}
             <li>
                 {{ jobCard(entry) }}
             </li>
