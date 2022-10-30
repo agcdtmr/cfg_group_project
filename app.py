@@ -20,7 +20,7 @@ login_manager.login_message='Please login to view this page'
 login_manager.login_message_category='error'
 
 
-#stores the user ide as a cookie
+#stores the user ID as a cookie
 
 class User(UserMixin):
 
