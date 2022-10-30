@@ -3,8 +3,6 @@ from flask import jsonify
 import requests
 from pprint import pprint
 
-#A. Mih
-
 def get_from_api():
     # url = "https://xxxx"
     # API_KEY = "HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f"
@@ -47,7 +45,9 @@ def get_from_api():
 # filter= input('Filter by: ')
 # keyword= input('You are searching for jobs with a {} of:'.format(filter))
 #
-# filtered_search(filter, keyword='tech')
+# filtered_search(filter, keyword)
+
+
 
 ########################
 #2
@@ -78,7 +78,7 @@ def get_from_api():
 
 ##############################################
 
-if __name__=="__main__":
+#if __name__=="__main__":
     print(get_from_api())
     #print(get_unfiltered_data())
     #print(filtered_search('junior','London'))

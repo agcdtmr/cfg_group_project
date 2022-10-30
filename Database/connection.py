@@ -1,7 +1,5 @@
 import mysql.connector
-import sys
-sys.path.append('..')
-from config import DATABASE, HOST, PASSWORD, USER
+from config import HOST, USER, DATABASE, PASSWORD
 
 def get_database_connection():
     return mysql.connector.connect(
