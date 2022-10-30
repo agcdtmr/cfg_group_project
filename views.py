@@ -80,8 +80,9 @@ def view_signup():
 @views.post('/signup')
 def submit_signup():
     #these are taken from the html
-    first_name = request.form.get('first_name')
     surname = request.form.get('surname')
+    first_name = request.form.get('first_name')
+    username = request.form.get('username')
     email = request.form.get('email')
     password = request.form.get('password')
     #To be implemented:
@@ -92,7 +93,7 @@ def submit_signup():
     if not email_available(email):
         flash("an account with that email already exists", "error")
     else:
-        add_user(first_name, surname, email, password)
+        add_user(surname, first_name, username, email, password)
         flash("New account created", 'info')
         #return redirect ('/login')
     return redirect ('/profile')
