@@ -1,5 +1,5 @@
-CREATE DATABASE job_search1;
-USE job_search1;
+CREATE DATABASE job_search;
+USE job_search;
 
 CREATE TABLE users
 (ID INT AUTO_INCREMENT PRIMARY KEY,
