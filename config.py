@@ -2,7 +2,7 @@
 SECRET_KEY = "secret-key"
 
 #Database connection information
-HOST = 'localhost'
-DATABASE = 'job_search'
-USER = "root"
-PASSWORD = ""
+HOST='localhost'
+DATABASE='job_search'
+USER="root"
+PASSWORD="CriCri333Python"

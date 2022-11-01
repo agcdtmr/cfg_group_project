@@ -1,9 +1,6 @@
 {%extends 'main.html' %}
 {% block title %} Home {% endblock %}
 {% block body %}
-<!-- this will just be integrated within the base template between block body &  endblock -->
-
-<img src ="{{ url_for ('static', filename = 'Black-Code-First-Girls-Logo-Transparent.png') }}"/>
 
 <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
     <h1>~ Welcome to our CFG job search engine~</h1>
@@ -12,6 +9,6 @@
         <a role="button" href="/jobengine" class="btn btn-outline-success">Job Engine</a>
       <a role="button" href="/login" class="btn btn-outline-warning">Log in</a>
       <a role="button" href="/signup" class="btn btn-outline-warning">Sign up</a>
-        </div>
+    </div>
 </div>
 {% endblock%}

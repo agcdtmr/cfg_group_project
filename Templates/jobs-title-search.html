@@ -1,0 +1,14 @@
+{% from '/macros/form-input.html' import formInput %}
+
+{% extends 'main.html' %}
+
+{% block title %}
+    Search jobs by title
+{% endblock %}
+
+{% block body %}
+    <form method="GET" class="text-center" action="/jobs-title-results">
+        {{ formInput(name="job", id="job", label="Choose a job title") }}
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+{% endblock %}
