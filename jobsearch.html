@@ -1,0 +1,18 @@
+{% from '/macros/form-input.html' import formInput %}
+
+{% extends 'main.html' %}
+
+{% block title %}
+    Let's start searching
+{% endblock %}
+
+{% block body %}
+    <form method="GET" class="text-center" action="/search-results">
+        {{ formInput(name="jobTitle", id="jobTitle", label="Job title") }}
+        {{ formInput(name="locationName", id="locationName", label="Location") }}
+        {{ formInput(name="employerName", id="employerName", label="Employer Name") }}
+        {{ formInput(name="minimumSalary", id="minimumSalary", label="Minimum Salary") }}
+        {{ formInput(name="expirationDate", id="expirationDate", label="Deadline to Apply") }}
+        <button type="submit" class="btn btn-outline-success">Search</button>
+    </form>
+{% endblock %}
