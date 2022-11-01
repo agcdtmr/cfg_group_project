@@ -1,0 +1,23 @@
+# Rendering one job result from api.py with labels(ex. Title:, Company:, etc)
+
+{% macro jobCard(data) %}
+    <div>
+        <address>
+            Location: {{ data.city }}
+        </address>
+        <h3>
+            <a href="{{ data.link }}">
+                Title: {{ data.job_title }}
+            </a>
+        </h3>
+        <p>
+            Company: {{ data.employer_name }}
+        </p>
+        <p>
+            Expiration Date: {{ data.exp_date }}
+        </p>
+        <p>
+            Job Description: {{ data.description }}
+        </p>
+    </div>
+{%- endmacro %}

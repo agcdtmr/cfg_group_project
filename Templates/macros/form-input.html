@@ -1,0 +1,6 @@
+{% macro formInput(name, id, label) %}
+  <div class="mb-3">
+        <label for="{{id}}" class="form-label">{{label}}</label>
+        <input type="text" class="form-control" id="{{id}}" name="{{name}}">
+  </div>
+{% endmacro %}
