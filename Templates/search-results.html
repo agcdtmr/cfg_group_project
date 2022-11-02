@@ -1,0 +1,10 @@
+{% from '/macros/job-list.html' import jobList %}
+{% extends 'main.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    {{ jobList(data) }}
+{% endblock %}

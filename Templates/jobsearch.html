@@ -1,30 +1,18 @@
+{% from '/macros/form-input.html' import formInput %}
+
 {% extends 'main.html' %}
-{% block title %}JobSearch{% endblock %}
+
+{% block title %}
+    Let's start searching
+{% endblock %}
+
 {% block body %}
-  <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-    <form method="post" class="text-center">
-        <h1> Let's start searching</h1>
-      <div class="mb-3">
-        <label for="job" class="form-label">Job Title</label>
-        <input type="text" class="form-control" id="job" name="job" required>
-      </div>
-      <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
-        <input type="text" class="form-control" id="location" name="location" required>
-      </div>
-      <div class="mb-3">
-        <label for="employer" class="form-label">Employer Name</label>
-        <input type="text" class="form-control" id="employer" name="employer" required>
-      </div>
-      <div class="mb-3">
-        <label for="expiration_date" class="form-label">Deadline</label>
-        <input type="text" class="form-control" id="expiration_date" name="expiration_date" required>
-      </div>
-      <div class="mb-3">
-        <label for="minimum_salary" class="form-label">Minimum Salary</label>
-        <input type="text" class="form-control" id="minimum_salary" name="minimum_salary" required>
-      </div>
-      <button type="submit" class="btn btn-outline-success">Search</button>
+    <form method="GET" class="text-center" action="/search-results">
+        {{ formInput(name="jobTitle", id="jobTitle", label="Job title") }}
+        {{ formInput(name="locationName", id="locationName", label="Location") }}
+        {{ formInput(name="employerName", id="employerName", label="Employer Name") }}
+        {{ formInput(name="minimumSalary", id="minimumSalary", label="Minimum Salary") }}
+        {{ formInput(name="expirationDate", id="expirationDate", label="Deadline to Apply") }}
+        <button type="submit" class="btn btn-outline-success">Search</button>
     </form>
-  </div>
 {% endblock %}
