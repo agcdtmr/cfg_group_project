@@ -1,8 +1,13 @@
-from flask import Blueprint, render_template, redirect, request, flash
-from flask_login import current_user, login_user, logout_user, login_required
-from Database.users import add_user, email_available, get_user_by_credentials
-from api import get_from_api, get_job_by_title
-from auth import User
+
+#creating the views for the webpage
+from typing import List, Dict, Any
+
+import requests
+from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
+from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
+from Database.users import add_user, get_user_by_credentials,email_available
+from config import SECRET_KEY
+from api import get_from_api, search_result
 
 
 views = Blueprint(__name__, "views")
@@ -11,6 +16,44 @@ views = Blueprint(__name__, "views")
 @views.get('/')
 def view_home():
     return render_template('home.html')
+
+
+#jobengine - full list button
+@views.get('/jobengine')
+def job_engine():
+    return render_template('jobengine.html')
+
+@views.get('/filter-jobs')
+def job_search():
+    return render_template('jobsearch.html')
+
+
+#@views.route('/jobs',methods = ['GET'])
+@views.get('/jobs')
+def job_results():
+    job_list: list[dict[str, Any]] = get_from_api()
+    return render_template("jobresults.html", job_list=job_list)
+
+
+#jobengine - filter button
+
+
+@views.get('/jobsearch')
+def jobsearch():
+    return render_template("jobsearch.html")
+
+
+@views.get('/search-results')
+def job_search_result():
+    search_title = request.args.get('jobTitle')  # 'job' is from input name attribute from jobs-title-search.html
+    search_location = request.args.get('locationName')
+    search_employer = request.args.get('employerName')
+    search_salary = request.args.get('minimumSalary')
+    search_deadline = request.args.get('expirationDate')
+    job_list = search_result(search_title, search_location, search_employer, search_salary, search_deadline) # a function from api.py
+    return render_template("search-results.html", data=job_list)
+
+#registering#login#logout
 
 @views.get('/login')
 def view_login():
@@ -43,11 +86,17 @@ def view_signup():
 
 @views.post('/signup')
 def submit_signup():
+
+    #these are taken from the html
+    first_name = request.form.get('first_name')
+    surname = request.form.get('surname')
+
     if not current_user.is_anonymous:
        return redirect('/profile')
     first_name = request.form.get('first_name')
     surname = request.form.get('surname')
     username = request.form.get('username')
+
     email = request.form.get('email')
     password = request.form.get('password')
     if len(password) < 5:
@@ -57,11 +106,18 @@ def submit_signup():
         flash('An account with that email already exists', 'error')
     # they're signed up and they ready to login
     else:
+
+        add_user(first_name, surname, email, password)
+        flash("New account created", 'info')
+        #return redirect ('/login')
+    return redirect ('/profile')
+
         add_user(first_name, surname,username, email, password)
         flash('New account created.', 'info')
         return redirect('/login')
     # otherwise have try again signing up
     return redirect('/signup')
+
 
 
 @views.post('/logout')
