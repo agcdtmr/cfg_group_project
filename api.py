@@ -3,8 +3,6 @@ from flask import jsonify
 import requests
 
 
-#A. Mih
-
 def get_from_api():
     # url = "https://xxxx"
     # API_KEY = "HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f"
@@ -14,7 +12,7 @@ def get_from_api():
     response = requests.get('https://www.reed.co.uk/api/1.0/search?keywords=programmer,tech,frontend%20developer,'
                             'backend%20developer,devops,software%20engineer,junior',
                auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()
-
+               
     data = [{
         "city": entry['locationName'],
         "job_title": entry['jobTitle'],
@@ -49,6 +47,5 @@ def search_result(jobTitle, locationName, employerName, minimumSalary, expiratio
 
 ##############################################
 
-if __name__=="__main__":
+#if __name__=="__main__":
     print(get_from_api())
-
