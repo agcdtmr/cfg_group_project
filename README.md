@@ -44,7 +44,9 @@ pip install mysql-connector-repackaged==0.3.1
 ```
 
 - python_bcrypt
-```pip install bcrypt```
+```
+pip install bcrypt
+```
 
 - requests
 ```
