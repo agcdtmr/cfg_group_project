@@ -5,4 +5,4 @@ SECRET_KEY = "secret-key"
 HOST='localhost'
 DATABASE='job_search'
 USER="root"
-PASSWORD="CriCri333Python"
+PASSWORD=""

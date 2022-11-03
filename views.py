@@ -27,16 +27,7 @@ def job_engine():
 def job_search():
     return render_template('jobsearch.html')
 
-
-#@views.route('/jobs',methods = ['GET'])
-@views.get('/jobs')
-def job_results():
-    job_list: list[dict[str, Any]] = get_from_api()
-    return render_template("jobresults.html", job_list=job_list)
-
-
 #jobengine - filter button
-
 
 @views.get('/jobsearch')
 def jobsearch():
@@ -87,10 +78,6 @@ def view_signup():
 @views.post('/signup')
 def submit_signup():
 
-    #these are taken from the html
-    first_name = request.form.get('first_name')
-    surname = request.form.get('surname')
-
     if not current_user.is_anonymous:
        return redirect('/profile')
     first_name = request.form.get('first_name')
@@ -106,18 +93,11 @@ def submit_signup():
         flash('An account with that email already exists', 'error')
     # they're signed up and they ready to login
     else:
-
-        add_user(first_name, surname, email, password)
-        flash("New account created", 'info')
-        #return redirect ('/login')
-    return redirect ('/profile')
-
         add_user(first_name, surname,username, email, password)
         flash('New account created.', 'info')
         return redirect('/login')
     # otherwise have try again signing up
     return redirect('/signup')
-
 
 
 @views.post('/logout')
@@ -132,15 +112,6 @@ def view_profile():
     return render_template("profile.html", user=current_user)
 
 ######################################
-
-#jobengine - full list button
-@views.get('/jobengine')
-def job_engine():
-    return render_template('jobengine.html')
-
-@views.get('/filter-jobs')
-def job_search():
-    return render_template('jobsearch.html')
 
 
 # #@views.route('/jobs',methods = ['GET'])
