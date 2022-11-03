@@ -3,25 +3,30 @@
 # Cookie Jobs 
 
 ## Table of content
-
 - [Description](#Description)
 - [Our Whys](#Our-Whys)
 - [Requirements](#Requirements)
-- [How to setup](#How-to-setup)
-- [How to run](#How-to-run)
+- [Built With](#Built-With)
+- [Getting Started](#Getting-Started)
+- [Project Files Description](#Project-Files-Description)
 - [How to run the unit test](#how-to-run-the-unit-test)
 - [Authors](#Authors)
 - [License](#License)
 - [Project Status](#Project-Status)
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Description
-Some text here
+Some text here. This project used reed.co.uk [api](https://www.reed.co.uk/api)
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Our Whys
-
 **We wanted a tool that allows us to:**
 1. Search junior-level tech jobs
-2. Help the CFG alumnis find jobs in tech
+2. Help the CFG alumnis find jobs in tech...
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Requirements
 1. Flask==2.2.2 
@@ -30,11 +35,17 @@ Some text here
 4. python_bcrypt==0.3.2 
 5. requests==2.28.1
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## How to setup
+## Built With
+This section lists all the major frameworks or libraries used to put this project together.
+- [Example](Next.js)
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Getting Started
 1. Go to our GitHub [repo](https://github.com/agcdtmr/cfg_group_project).
-2. Clone the files from GitHub to your local directory.
+2. Fork our project to your local directory.
 3. Install the python libraries below if necessary:
 - Flask
 ```
@@ -56,22 +67,47 @@ pip install bcrypt
 pip install requests
 ```
 
-4. Open the repo using pycharm, go to app.py and run.
+4. Open the repo using pycharm, go to **app.py** and run.
 
-## How to run
-Some text here
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Project Files Description
+- api.py - Where we call our api.
+- app.py - The main file that runs our website.
+- auth.py - 
+- config.py -
+- views.py
+- 
+
+
+**Some other supporting files**
+- connection.py - where we connect our sql database to our python server.
+- users.py - Where we retrieve data from our users.
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## How to run the unit test
 Some text here
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Authors:
 Amelie, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina, Helen, and Ruth.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## License
 This project is open source and all ownership rights are attributed to the authors.
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Acknowledgments
+- Thank you very much to [Code First Girls](https://codefirstgirls.com/).
+- Thank you to Jack, Nada, Fola and all the people behind this community.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Project Status
 This website is created as a final project for Software Engineering CFG Degree.
 The development has stopped completely as we have submitted and presented this project.
-
-## 
