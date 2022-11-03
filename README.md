@@ -1,3 +1,5 @@
+<p align="center"><img width=12.5% src="https://github.com/agcdtmr/cfg_group_project/blob/home_html_edited/static/cookie-jobs-logo.png"></p>
+
 # Cookie Jobs 
 
 ## Table of content
@@ -17,8 +19,9 @@ Some text here
 
 ## Our Whys
 
-We wanted a tool that allows us to:
-1.
+**We wanted a tool that allows us to:**
+1. Search junior-level tech jobs
+2. Help the CFG alumnis find jobs in tech
 
 ## Requirements
 1. Flask==2.2.2 
