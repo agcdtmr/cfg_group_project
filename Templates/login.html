@@ -1,18 +1,20 @@
 {% extends 'main.html' %}
 {% block title %}Login{% endblock %}
 {% block body %}
-  <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-    <form method="post" class="text-center">
-      <h1>Let's Log in</h1>
+  <div class="container ghost-box d-flex flex-column justify-content-center align-items-center">
+    <form class='web-form' method="post" class="text-center">
+      <h2>Let's Log in</h2>
       <div class="mb-3">
+
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="email" name="email" required>
+        <input type="text" placeholder="Please enter email" class="form-control" id="email" name="email" required>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <input type="password" placeholder="Please enter password" class="form-control" id="password" name="password" required>
       </div>
-      <button type="submit" class="btn btn-outline-success">Login</button>
+
+      <button type="submit" class="action_button form-submission btn-outline-success">Login</button>
       {% with error_messages = get_flashed_messages(category_filter=['error']) %}
         {% if error_messages %}
           <p class="text-danger mt-3">{{ error_messages|join(' • ') }}</p>

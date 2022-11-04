@@ -1,14 +1,16 @@
-from flask import Flask
+
+#creating the server for the job engine application
+
+from flask import Flask, render_template, url_for
 from flask_login import LoginManager
 from views import views
 from auth import User
 from Database.users import get_user_by_id
 from config import SECRET_KEY
 
-app = Flask(__name__)
 
+app= Flask(__name__)
 app.secret_key= SECRET_KEY
-
 app.register_blueprint(views, url_prefix='/')
 
 #set up
@@ -35,4 +37,5 @@ def user_loader(user_id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5009)
+
 
