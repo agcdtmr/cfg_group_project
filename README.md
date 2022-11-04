@@ -1,4 +1,4 @@
-<p align="center"><img width=30% src="https://github.com/agcdtmr/cfg_group_project/blob/main/Templates/static/cookie__4_-removebg-preview.png"></p>
+<p align="center"><img width=50% src="https://github.com/agcdtmr/cfg_group_project/blob/main/Templates/static/cookie__4_-removebg-preview.png"></p>
 
 # Cookie Jobs 
 
