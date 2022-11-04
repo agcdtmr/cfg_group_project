@@ -119,7 +119,7 @@ Some text here
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Authors:
-Amelie, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina, Helen, and Ruth.
+Amelie Legault, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina Pentiuc, Helen Shortland, and Ruth Osoba
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
