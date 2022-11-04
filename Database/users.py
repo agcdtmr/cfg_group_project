@@ -58,7 +58,7 @@ def get_user_by_id(user_id):
         with connection.cursor(dictionary=True) as cursor:
             cursor.execute("""SELECT u.user_ID, u.first_name, u.surname, u.email
                                 FROM users AS u
-                              WHERE u.id = %s""", [user_id])
+                              WHERE u.user_id = %s""", [user_id])
             user = cursor.fetchone()
             if user is not None:
                 return user

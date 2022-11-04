@@ -2,6 +2,7 @@
 #creating the views for the webpage
 from typing import List, Dict, Any
 from requests.auth import HTTPBasicAuth
+from auth import User
 import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
