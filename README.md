@@ -17,14 +17,17 @@
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Description
-Some text here. This project used reed.co.uk [api](https://www.reed.co.uk/api)
+Entering the tech job search can be daunting and overwhelming.
+CookieJobs is an open source web application built for [Code First Girls](https://codefirstgirls.com/)
+graduates and alumnae based on data from reed.co.uk [api](https://www.reed.co.uk/api)
+that will allow them to easily find jobs in the tech industry.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Our Whys
-**We wanted a tool that allows us to:**
+**We wanted a tool that would allow users to:**
 1. Search junior-level tech jobs
-2. Help the CFG alumnis find jobs in tech...
+2. Help the CFG graduates and alumnae find jobs in tech
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -39,7 +42,13 @@ Some text here. This project used reed.co.uk [api](https://www.reed.co.uk/api)
 
 ## Built With
 This section lists all the major frameworks or libraries used to put this project together.
-- [Example](Next.js)
+- [MySQL](https://www.mysql.com/products/connector/)
+- [sys](https://docs.python.org/3/library/sys.html)
+- [hashlib](https://docs.python.org/3/library/hashlib.html)
+- [macros](https://explore-flask.readthedocs.io/en/latest/templates.html)
+- [requests](https://pypi.org/project/requests/)
+- [flask](https://flask.palletsprojects.com/en/2.2.x/)
+- [bcrypt](https://pypi.org/project/bcrypt/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -57,7 +66,7 @@ pip install Flask
 pip install mysql-connector-repackaged==0.3.1
 ```
 
-- python_bcrypt
+- bcrypt
 ```
 pip install bcrypt
 ```
@@ -67,6 +76,17 @@ pip install bcrypt
 pip install requests
 ```
 
+- sys
+```
+pip install os-sys
+```
+
+- hashlib
+```
+pip install hashlib
+```
+
+
 4. Open the repo using pycharm, go to **app.py** and run.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -74,15 +94,21 @@ pip install requests
 ## Project Files Description
 - api.py - Where we call our api.
 - app.py - The main file that runs our website.
-- auth.py - 
-- config.py -
-- views.py
-- 
-
+- auth.py - Stores the user id as a cookie
+- config.py - Database connection information and secret Key for Flask session
+- views.py - Creating the views for the webpage
+- connection.py - Where we connect our sql database to our python server.
+- users.py - Where we retrieve data from our users.
 
 **Some other supporting files**
-- connection.py - where we connect our sql database to our python server.
-- users.py - Where we retrieve data from our users.
+- jobengine.html - Where user may choose to find all jobs or filtered jobs
+- jobresults.html - Shows the list of all jobs
+- jobsearch.html - Displays our form for filtering jobs
+- search-results.html - Shows the list of filtered jobs
+- login.html - Displays our form for logging in
+- main.html - The main file for our html head and body and where we connect our css styling
+- profile.html - Shows the profile page of the users once logged in
+- signup.html - Displays our form for signing up
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
