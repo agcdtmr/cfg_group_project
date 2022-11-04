@@ -1,13 +1,15 @@
 
 #creating the views for the webpage
 from typing import List, Dict, Any
-
+from requests.auth import HTTPBasicAuth
 import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
-from Database.users import add_user, get_user_by_credentials,email_available
+from Database.users import add_user, get_user_by_credentials, email_available
+from Database.saved_jobs import save_job
 from config import SECRET_KEY
 from api import get_from_api, search_result
+
 
 
 views = Blueprint(__name__, "views")
@@ -130,3 +132,24 @@ def job_result_by_title():
     job_list = get_job_by_title(search_input) # a function from api.py
     return render_template("jobs-title-results.html", data=job_list)
 
+# get jobID
+
+@views.post('/saved_job')
+def save_job_id():
+    jobID = request.form.get('JobID')
+    response = requests.get(f'https://www.reed.co.uk/api/1.0/jobs/{jobID}',
+                               auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()
+    employerId = request.form.get('employerId')
+    employerName = request.form.get('employerName')
+    expirationDate = request.form.get('expirationDate')
+    jobDescription = request.form.get('jobDescription')
+    jobId = request.form.get('jobId')
+    jobTitle = request.form.get('jobTitle')
+    jobURL = request.form.get('jobURL')
+    locationName =request.form.get('locationName')
+    maximumSalary = request.form.get('maximumSalary')
+    minimumSalary = request.form.get('minimumSalary')
+    save_job(employerId, employerName, expirationDate, jobDescription, jobId, jobTitle, jobURL, locationName,
+             maximumSalary, minimumSalary, user_ID)
+    print(response)
+    return response
