@@ -1,4 +1,4 @@
-<p align="center"><img width=50% src="https://github.com/agcdtmr/cfg_group_project/blob/main/Templates/static/cookie__4_-removebg-preview.png"></p>
+<p align="center"><img width=40% src="https://github.com/agcdtmr/cfg_group_project/blob/main/Templates/static/cookie__4_-removebg-preview.png"></p>
 
 # Cookie Jobs 
 
@@ -18,9 +18,10 @@
 
 ## Description
 Entering the tech job search can be daunting and overwhelming.
-CookieJobs is an open source web application built for [Code First Girls](https://codefirstgirls.com/)
-graduates and alumnae based on data from reed.co.uk [api](https://www.reed.co.uk/api)
-that will allow them to easily find jobs in the tech industry.
+Based on data from reed.co.uk [api](https://www.reed.co.uk/api)
+**CookieJobs** is an open source tool built for [Code First Girls](https://codefirstgirls.com/)
+graduates and alumnae, career switchers and tech newbies.
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -28,6 +29,7 @@ that will allow them to easily find jobs in the tech industry.
 **We wanted a tool that would allow users to:**
 1. Search junior-level tech jobs
 2. Help the CFG graduates and alumnae find jobs in tech
+3. Easily find jobs in the tech industry.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -86,7 +88,6 @@ pip install os-sys
 pip install hashlib
 ```
 
-
 4. Open the repo using pycharm, go to **app.py** and run.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -110,11 +111,12 @@ pip install hashlib
 - profile.html - Shows the profile page of the users once logged in
 - signup.html - Displays our form for signing up
 
+[//]: # (![-----------------------------------------------------]&#40;https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png&#41;)
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+[//]: # ()
+[//]: # (## How to run the unit test)
 
-## How to run the unit test
-Some text here
+[//]: # (Some text here)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -130,7 +132,7 @@ This project is open source and all ownership rights are attributed to the autho
 
 ## Acknowledgments
 - Thank you very much to [Code First Girls](https://codefirstgirls.com/).
-- Thank you to Jack, Nada, Fola and all the people behind this community.
+- Thank you to Nada, Fola, Jack and all the people behind this community.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
