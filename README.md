@@ -88,6 +88,7 @@ pip install hashlib
 - views.py - Creating the views for the webpage
 - connection.py - Where we connect our sql database to our python server.
 - users.py - Where we retrieve data from our users.
+- saved_jobs.py - Functions to save and retrieve saved jobs from the database.
 
 **Other supporting files**
 - jobengine.html - Where user may choose to find all jobs or filtered jobs
