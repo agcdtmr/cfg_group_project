@@ -2,15 +2,14 @@
 #creating the views for the webpage
 from typing import List, Dict, Any
 
-import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
-from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from Database.users import add_user, get_user_by_credentials,email_available
 from config import SECRET_KEY
 from api import get_from_api, search_result
 
 
 views = Blueprint(__name__, "views")
+
 
 
 @views.get('/')

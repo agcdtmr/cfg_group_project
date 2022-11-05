@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Roboto:wght@300&display=swap');
+
+
+/*standard styling*/
+body{
+  font-family: 'roboto', 'sans-serif'
+margin: 0px;
+background-color:#F5F5F5;
+height: 100vh;
+padding-top: 30vh;
+}
+#nav_logo{
+  height: 10rem;
+  width: auto;
+
+}
+
+
+nav{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 20vh;
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2rem;
+
+
+}
+
+ul li{
+
+  padding: 1rem 0.7rem 1rem 0.7rem;
+  margin-right: 0.6rem;
+  list-style: none;
+  width: 6rem;
+  text-align: center;
+  transition: 0.4s;
+
+}
+
+
+
+ul li a{
+ text-decoration: none;
+  color: black;
+  padding: 1rem 2rem 1rem 2rem;
+  transition: 0.2s;
+
+
+}
+
+ul li:hover{
+  color: #EE4C94
+}
+
+ul li a: visited{
+  text-decoration:none;
+}
+
+.action_button{
+border-radius: 0.2rem;
+border: none;
+width: 5rem;
+color: white !important;
+background-color: #EE4C94;
+transition: 0.5s;
+}
+
+.action_button:hover{
+border-radius: 0.2rem;
+width: 5rem;
+color: #EE4C94 !important;
+background-color: #F5F5F5;
+}
+
+/* home page */
+
+#home{
+display: flex;
+justify-content: space-between;
+}
+#left-home{
+
+
+}
+
+#left-home h1{
+font-size: 3rem}
+
+#right-home{
+
+width: 30rem;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+#home_img{
+width: 15rem;
+margin-bottom: 2rem;
+
+}
+
+.home-btn{
+border-radius: 0.2rem;
+width: 5.5rem;
+padding: 0.5rem;
+color: black;
+background-color:#F2BCDC;
+transition: 0.5s;
+border: none;
+font-size: 1rem;
+}
+
+.home-btn:hover{
+color: #EE4C94;
+}
+
+/*sign up*/
+
+.ghost-box{
+height: auto;
+width: 40%;
+left: 335px;
+top: 134px;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+}
+
+
+.web-form{
+padding: 2rem;
+margin: 1rem;
+text-align: center;
+}
+
+.form-submission{
+width: 7rem;
+height: 2.3rem;
+padding: 0.2rem;
+}
+
+/*Job engine*/
+
+#search-options{
+display: flex;
+justify-content: space-between;
+padding: 2rem;
+}
+
+.searches{
+padding: 1.5rem;
+text-align: center;}
