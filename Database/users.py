@@ -25,7 +25,7 @@ def email_available(email):
     """Checks whether an email is available or if it's already in the database"""
     with get_database_connection() as connection:
         with connection.cursor(dictionary=True) as cursor:
-            cursor.execute("""SELECT u.ID, u.first_name, u.surname, u.email, u.hashed_password
+            cursor.execute("""SELECT u.user_ID, u.first_name, u.surname, u.email, u.hashed_password
                                 FROM users AS u
                               WHERE u.email = %s""", [email] )
             user = cursor.fetchone()
@@ -56,9 +56,9 @@ def get_user_by_id(user_id):
     """Retrieves the users with the given id"""
     with get_database_connection() as connection:
         with connection.cursor(dictionary=True) as cursor:
-            cursor.execute("""SELECT u.ID, u.first_name, u.surname, u.email
+            cursor.execute("""SELECT u.user_ID, u.first_name, u.surname, u.email
                                 FROM users AS u
-                              WHERE u.id = %s""", [user_id])
+                              WHERE u.user_id = %s""", [user_id])
             user = cursor.fetchone()
             if user is not None:
                 return user
