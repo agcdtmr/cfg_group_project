@@ -4,12 +4,12 @@
 
 ## Table of content
 - [Description](#Description)
-- [Our Whys](#Our-Whys)
+- [Our Why's](#Our-Why's)
 - [Requirements](#Requirements)
 - [Built With](#Built-With)
 - [Getting Started](#Getting-Started)
 - [Project Files Description](#Project-Files-Description)
-- [How to run the unit test](#how-to-run-the-unit-test)
+[//]: # (- [How to run the unit test]&#40;#how-to-run-the-unit-test&#41;)
 - [Authors](#Authors)
 - [License](#License)
 - [Project Status](#Project-Status)
@@ -18,14 +18,14 @@
 
 ## Description
 Entering the tech job search can be daunting and overwhelming.
-Based on data from reed.co.uk [api](https://www.reed.co.uk/api)
+Based on data from [reed.co.uk](https://www.reed.co.uk/api),
 **CookieJobs** is an open source tool built for [Code First Girls](https://codefirstgirls.com/)
 graduates and alumnae, career switchers and tech newbies.
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## Our Whys
+## Our Why's
 **We wanted a tool that would allow users to:**
 1. Search junior-level tech jobs
 2. Help the CFG graduates and alumnae find jobs in tech
@@ -34,11 +34,11 @@ graduates and alumnae, career switchers and tech newbies.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Requirements
-1. Flask==2.2.2 
-2. Flask_Login==0.6.2 
-3. mysql_connector_repackaged==0.3.1 
-4. python_bcrypt==0.3.2 
-5. requests==2.28.1
+1. Application is developed in Python 3.9
+2. You can install the packages using the `requirements.txt` file.
+```
+pip install -r requirements.txt
+```
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -56,7 +56,7 @@ This section lists all the major frameworks or libraries used to put this projec
 
 ## Getting Started
 1. Go to our GitHub [repo](https://github.com/agcdtmr/cfg_group_project).
-2. Fork our project to your local directory.
+2. Fork or clone our project to your local directory.
 3. Install the python libraries below if necessary:
 - Flask
 ```
@@ -137,5 +137,5 @@ This project is open source and all ownership rights are attributed to the autho
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Project Status
-This website is created as a final project for Software Engineering CFG Degree.
+This website is created as a final project for Autumn 2022 Software Engineering CFG Degree.
 The development has stopped completely as we have submitted and presented this project.
