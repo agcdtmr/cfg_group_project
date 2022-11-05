@@ -122,7 +122,7 @@ This project is open source and all ownership rights are attributed to the autho
 ## Acknowledgments
 - Thank you very much to [Code First Girls](https://codefirstgirls.com/).
 - Thank you to Nada, Fola, Jack and all the people behind this community.
-- Congratulations to 
+- Congratulations to all our fellow students for this achievement, we wish you all the best in your journey to tech
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
