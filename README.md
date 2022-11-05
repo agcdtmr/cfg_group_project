@@ -9,7 +9,6 @@
 - [Built With](#Built-With)
 - [Getting Started](#Getting-Started)
 - [Project Files Description](#Project-Files-Description)
-- [How to run the unit test](#how-to-run-the-unit-test)
 - [Authors](#Authors)
 - [License](#License)
 - [Project Status](#Project-Status)
@@ -49,7 +48,6 @@ This section lists all the major frameworks or libraries used to put this projec
 - [macros](https://explore-flask.readthedocs.io/en/latest/templates.html)
 - [requests](https://pypi.org/project/requests/)
 - [flask](https://flask.palletsprojects.com/en/2.2.x/)
-- [bcrypt](https://pypi.org/project/bcrypt/)
 - [bootstrap](https://getbootstrap.com/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -103,14 +101,8 @@ pip install hashlib
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## How to run the unit test
-
-Some text here
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
 ## Authors:
-Amelie Legault, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina Pentiuc, Helen Shortland, and [Ruth Osoba](https://www.linkedin.com/in/ruth-osoba/)
+[Amelie Legault](https://www.linkedin.com/in/amelie-legault/), [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina Pentiuc, Helen Shortland, and [Ruth Osoba](https://www.linkedin.com/in/ruth-osoba/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
