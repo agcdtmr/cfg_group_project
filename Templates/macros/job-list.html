@@ -7,6 +7,10 @@
         {% for entry in data %}
             <li>
                 {{ jobCard(entry) }}
+                <form method = "post" action = "/saved_job">
+                    <input type="hidden" value="{{entry.jobId}}" name="JobID">
+                <button type="submit" class="btn btn-outline-success" >Save Job</button>
+                </form>
             </li>
         {% endfor %}
     </ul>

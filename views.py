@@ -1,6 +1,3 @@
-
-#creating the views for the webpage
-
 from typing import List, Dict, Any
 from requests.auth import HTTPBasicAuth
 from auth import User
@@ -8,12 +5,12 @@ import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from Database.users import add_user, get_user_by_credentials, email_available, get_user_by_id
+from Database.saved_jobs import save_job, display_saved_jobs, save_applied_for_job
 from config import SECRET_KEY
 from api import get_from_api, search_result
 from datetime import timedelta
 
 views = Blueprint(__name__, "views")
-
 
 
 @views.get('/')
@@ -59,17 +56,16 @@ def submit_login():
     if not current_user.is_anonymous:
         return redirect('/profile')
     email = request.form.get('email')
-    password=request.form.get('password')
-    user=get_user_by_credentials(email,password)
+    password = request.form.get('password')
+    user = get_user_by_credentials(email, password)
     if user is None:
         flash('Invalid credentials', 'error')
     else:
         user = User(user)
-        login_user(user)
+        login_user(user, remember=True, duration=timedelta(hours=2))
         return redirect('/profile')
     #in case something has gone wrong
     return redirect('/login')
-
 
 @views.get('/signup')
 def view_signup():
@@ -107,12 +103,14 @@ def submit_signup():
 @login_required
 def submit_logout():
     logout_user()
-    return redirect ('/login')
+    return redirect('/login')
 
 @views.get('/profile')
 def view_profile():
-    #must add again login_required
-    return render_template("profile.html", user=current_user)
+    # headings = ('Employer_ID', 'Employer_Name', 'Date_Application_Closes', 'Job_ID', 'Job_Title','Link_to_Apply',\
+    #            'Location', 'Maximum_Salary', 'Minimum_Salary', 'Have_I_applied_for_this_job')
+    data = (display_saved_jobs())
+    return render_template("profile.html", user=current_user, data=data)
 
 ######################################
 
@@ -123,13 +121,35 @@ def job_results():
     job_list = get_from_api()
     return render_template("jobresults.html", job_list=job_list)
 
-@views.get('/jobs-title-search')
-def job_search_by_title():
-    return render_template("jobs-title-search.html")
+# get jobID
 
-@views.get('/jobs-title-results')
-def job_result_by_title():
-    search_input = request.args.get('job')  # 'job' is from input name attribute from jobs-title-search.html
-    job_list = get_job_by_title(search_input) # a function from api.py
-    return render_template("jobs-title-results.html", data=job_list)
+@views.post('/saved_job')
+def save_job_id():
+    jobID = request.form.get('JobID')
+    response = requests.get(f'https://www.reed.co.uk/api/1.0/jobs/{jobID}',
+                               auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()
 
+    user_id = current_user.id
+
+    save_job(response['employerId'],
+             response['employerName'],
+             response['expirationDate'],
+             response['jobDescription'],
+             response['jobId'],
+             response['jobTitle'],
+             response['jobUrl'],
+             response['locationName'],
+             response['maximumSalary'],
+             response['minimumSalary'],
+             user_id
+             )
+    return redirect('/profile')
+
+@views.post('/have_i_applied_for_this_job')
+def have_i_applied_for_this_job():
+    jobID = request.form.get('jobID')
+    link = request.form.get('link')
+
+    save_applied_for_job(jobID)
+
+    return redirect(link)
