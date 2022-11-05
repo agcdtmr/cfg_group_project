@@ -1,7 +1,7 @@
 # Rendering one job result from api.py with labels(ex. Title:, Company:, etc)
 
 {% macro jobCard(data) %}
-    <div>
+    <div class="job_card">
         <address>
             Location: {{ data.city }}
         </address>
@@ -19,5 +19,6 @@
         <p>
             Job Description: {{ data.description }}
         </p>
+        <br>
     </div>
 {%- endmacro %}
