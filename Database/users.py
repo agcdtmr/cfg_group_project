@@ -1,7 +1,8 @@
 import hashlib
-from Database.connection import get_database_connection
+from cfg_group_project.Database.connection import get_database_connection
 
-def add_user(first_name: str, surname:str,username:str, email:str, password: str):
+
+def add_user(first_name: str, surname: str, username: str, email: str, password: str):
     """
     Adds a new user to the database
     Raises an error is the email already exists in the database
@@ -10,10 +11,9 @@ def add_user(first_name: str, surname:str,username:str, email:str, password: str
         with connection.cursor(dictionary=True) as cursor:
             # converting password to bytes
             password_bytes = password.encode()
-            #hashing the password
+            # hashing the password
             password = hashlib.sha256(password_bytes).hexdigest()
-            #password = bcrypt.hashpw(password_bytes, "123")
-            #adding to the database
+            # adding to the database
             cursor.execute("""INSERT
                                 INTO users
                                    (first_name, surname, username, email, password) 
@@ -27,13 +27,10 @@ def email_available(email):
         with connection.cursor(dictionary=True) as cursor:
             cursor.execute("""SELECT u.user_ID, u.first_name, u.surname, u.email, u.password
                                 FROM users AS u
-                              WHERE u.email = %s""", [email] )
+                              WHERE u.email = %s""", [email])
             user = cursor.fetchone()
-            # if user is None: #if there is no email such as the one submitted
-            #     return True
-            # else:
-            #     return False
             return True if user is None else False
+
 
 def get_user_by_credentials(email, password):
     """Retrieves the user with the given credentials, if present.
@@ -42,12 +39,11 @@ def get_user_by_credentials(email, password):
         with connection.cursor(dictionary=True) as cursor:
             password_bytes = password.encode()
             password = hashlib.sha256(password_bytes).hexdigest()
-            # password = bcrypt.hashpw(password_bytes, "123")
             cursor.execute("""SELECT *
                                 FROM users as u
                                 WHERE u.email = %s""", [email])
             user = cursor.fetchone()
-            #checking password
+            # checking password
             if user is not None and password == user.get('password'):
                 return user
 

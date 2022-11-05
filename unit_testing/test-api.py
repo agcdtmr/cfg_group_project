@@ -1,22 +1,21 @@
 from unittest import TestCase
 import requests
-from cfg_group_project.api import get_from_api, search_result
+from requests.auth import HTTPBasicAuth
 
 
 class TestAPI(TestCase):
-    def Test_get_from_api(self):
+    def test_get_from_api(self):
         response = requests.get('https://www.reed.co.uk/api/1.0/search?keywords=tech'
                                 , auth=('d71bf436-fc9f-47fb-9a1f-2035ae09c27f'
                                         , ''))
         result = 200
         self.assertTrue(response, result)
 
-
-    def Test_search_result(self):
-        response = requests.get(f'https://www.reed.co.uk/api/1.0/search?keywords=programmer,tech,frontend%20developer,'
-                                f'backend%20developer,devops,software%20engineer,junior,{jobTitle}&locationName='
-                                f'{locationName}&employerName={employerName}&minimumSalary={minimumSalary}&'
-                                f'expirationDate={expirationDate}',
+    def test_search_result(self):
+        response = requests.get('https://www.reed.co.uk/api/1.0/search?keywords=programmer,tech,frontend%20developer,'
+                                'backend%20developer,devops,software%20engineer,junior,Junior%20Data%20Engineer&locationName='
+                                'London&employerName=Anson%20McCade%20Ltd%20%20IT%20and%20Finance%20Recruitment&minimumSalary=45000&'
+                                'expirationDate=09/12/2022',
                                 auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', ''))
         result = 200
 

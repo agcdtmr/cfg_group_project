@@ -1,4 +1,5 @@
-from Database.connection import get_database_connection
+from cfg_group_project.Database.connection import get_database_connection
+
 
 def save_job(employerId: int, employerName: str, expirationDate: str, jobDescription: str, jobId: int, jobTitle: str,
 jobURL: str, locationName: str, maximumSalary: int, minimumSalary: int, user_ID: int):

@@ -5,7 +5,6 @@
     <form class='web-form' method="post" class="text-center">
       <h2>Let's Log in</h2>
       <div class="mb-3">
-
         <label for="email" class="form-label">Email</label>
         <input type="text" placeholder="Please enter email" class="form-control" id="email" name="email" required>
       </div>
@@ -13,11 +12,10 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" placeholder="Please enter password" class="form-control" id="password" name="password" required>
       </div>
-
       <button type="submit" class="action_button form-submission btn-outline-success">Login</button>
       {% with error_messages = get_flashed_messages(category_filter=['error']) %}
         {% if error_messages %}
-          <p class="text-danger mt-3">{{ error_messages|join(' • ') }}</p>
+      <p class="text-danger mt-3">{{ error_messages|join(' • ') }}</p>
         {% endif %}
       {% endwith %}
       {% with info_messages = get_flashed_messages(category_filter=['info']) %}

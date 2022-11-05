@@ -1,6 +1,6 @@
 from flask_login import UserMixin
+# stores the user ide as a cookie
 
-#stores the user ide as a cookie
 
 class User(UserMixin):
 
