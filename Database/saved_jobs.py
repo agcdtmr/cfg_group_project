@@ -33,17 +33,14 @@ def display_saved_jobs():
                 return retrieved_data
 
 
-# def save_applied_for_job():
-#     """
-#     Adds a job user wants to apply for to database
-#     """
-#     with get_database_connection() as connection:
-#         with connection.cursor(dictionary=True) as cursor:
-#             cursor.execute("""INSERT
-#                                INTO saved_jobs
-#                                   (employerID, employerName,expirationDate, jobDescription, jobID, jobTitle,
-#                                    jobURL, locationName, maximumSalary, minimumSalary, user_ID)
-#                                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-#                            [employerId, employerName, expirationDate, jobDescription, jobId, jobTitle, jobURL,
-#                             locationName, maximumSalary, minimumSalary, user_ID])
-#             connection.commit()
+def save_applied_for_job(jobID):
+    """
+    Adds have i applied for job when clicking link to apply for job
+    """
+    with get_database_connection() as connection:
+        with connection.cursor(dictionary=True) as cursor:
+            cursor.execute("""UPDATE saved_jobs
+            SET applied_for_job = TRUE
+            WHERE jobID = %s """,
+                           [jobID])
+            connection.commit()

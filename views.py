@@ -7,7 +7,7 @@ import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from Database.users import add_user, get_user_by_credentials, email_available, get_user_by_id
-from Database.saved_jobs import save_job, display_saved_jobs
+from Database.saved_jobs import save_job, display_saved_jobs, save_applied_for_job
 from config import SECRET_KEY
 from api import get_from_api, search_result
 from datetime import timedelta
@@ -149,8 +149,11 @@ def save_job_id():
              )
     return redirect('/profile')
 
-# @views.post('/have_i_applied_for_this_job')
-# def have_i_applied_for_this_job():
-#     jobID = request.form.get('JobID')
-#     link = request.form.get('link')
-#     pass
+@views.post('/have_i_applied_for_this_job')
+def have_i_applied_for_this_job():
+    jobID = request.form.get('jobID')
+    link = request.form.get('link')
+
+    save_applied_for_job(jobID)
+
+    return redirect(link)

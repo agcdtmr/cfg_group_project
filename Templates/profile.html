@@ -4,6 +4,8 @@
   <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="text-center"> Welcome,amazing you</h1>
     <h2 class="text-center"> Hi, {{user.first_name}}</h2>
+
+    {% if data[0] %}
     <table>
       <tr>
         {% for key, _ in data[0].items() %}
@@ -23,6 +25,8 @@
                 <button type="submit" class="btn btn-outline-info">Apply for Job</button>
             </form>
             </td>
+          {% elif key == 'Have I applied for this job?' %}
+             <td>{{ 'Yes' if value else 'No' }}</td>
           {% elif key != 'jobID' %}
              <td>{{ value }}</td>
           {% endif %}
@@ -31,6 +35,8 @@
       </tr>
         {% endfor %}
     </table>
+     {% endif %}
+
     <form action="/logout" method="post">
       <button type="submit" class="btn btn-outline-info">Logout</button>
       {% with error_messages = get_flashed_messages(category_filter=['error']) %}
