@@ -89,7 +89,7 @@ pip install hashlib
 - connection.py - Where we connect our sql database to our python server.
 - users.py - Where we retrieve data from our users.
 
-**Some other supporting files**
+**Other supporting files**
 - jobengine.html - Where user may choose to find all jobs or filtered jobs
 - jobresults.html - Shows the list of all jobs
 - jobsearch.html - Displays our form for filtering jobs
