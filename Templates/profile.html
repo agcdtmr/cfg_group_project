@@ -4,6 +4,33 @@
   <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="text-center"> Welcome,amazing you</h1>
     <h2 class="text-center"> Hi, {{user.first_name}}</h2>
+    <table>
+      <tr>
+        {% for key, _ in data[0].items() %}
+          {% if key != 'jobID' %}
+            <th>{{ key }}</th>
+          {% endif %}
+        {% endfor %}
+      </tr>
+        {% for row in data %}
+        <tr>
+          {% for key, value in row.items() %}
+          {% if key == 'Link to Apply' %}
+            <td>
+              <form method = "post" action ="/have_i_applied_for_this_job">
+                <input type="hidden" value="{{ value }}" name="link">
+                <input type="hidden" value="{{ row['jobID'] }}" name="jobID">
+                <button type="submit" class="btn btn-outline-info">Apply for Job</button>
+            </form>
+            </td>
+          {% elif key != 'jobID' %}
+             <td>{{ value }}</td>
+          {% endif %}
+
+          {% endfor %}
+      </tr>
+        {% endfor %}
+    </table>
     <form action="/logout" method="post">
       <button type="submit" class="btn btn-outline-info">Logout</button>
       {% with error_messages = get_flashed_messages(category_filter=['error']) %}
