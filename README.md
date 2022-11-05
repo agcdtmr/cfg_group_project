@@ -9,7 +9,7 @@
 - [Built With](#Built-With)
 - [Getting Started](#Getting-Started)
 - [Project Files Description](#Project-Files-Description)
-[//]: # (- [How to run the unit test]&#40;#how-to-run-the-unit-test&#41;)
+- [How to run the unit test](#how-to-run-the-unit-test)
 - [Authors](#Authors)
 - [License](#License)
 - [Project Status](#Project-Status)
@@ -20,16 +20,15 @@
 Entering the tech job search can be daunting and overwhelming.
 Based on data from [reed.co.uk](https://www.reed.co.uk/api),
 **CookieJobs** is an open source tool built for [Code First Girls](https://codefirstgirls.com/)
-graduates and alumnae, career switchers and tech newbies.
+graduates and alumni, career switchers and tech newbies.
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Our Why's
-**We wanted a tool that would allow users to:**
-1. Search junior-level tech jobs
-2. Help the CFG graduates and alumnae find jobs in tech
-3. Easily find jobs in the tech industry.
+**We wanted a tool that would:**
+1. Allow users to search junior-level tech jobs
+2. Help the CFG graduates and alumni find jobs in tech
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -51,6 +50,7 @@ This section lists all the major frameworks or libraries used to put this projec
 - [requests](https://pypi.org/project/requests/)
 - [flask](https://flask.palletsprojects.com/en/2.2.x/)
 - [bcrypt](https://pypi.org/project/bcrypt/)
+- [bootstrap](https://getbootstrap.com/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -61,16 +61,6 @@ This section lists all the major frameworks or libraries used to put this projec
 - Flask
 ```
 pip install Flask
-```
-
-- mysql_connector_repackaged
-```
-pip install mysql-connector-repackaged==0.3.1
-```
-
-- bcrypt
-```
-pip install bcrypt
 ```
 
 - requests
@@ -111,17 +101,16 @@ pip install hashlib
 - profile.html - Shows the profile page of the users once logged in
 - signup.html - Displays our form for signing up
 
-[//]: # (![-----------------------------------------------------]&#40;https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png&#41;)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-[//]: # ()
-[//]: # (## How to run the unit test)
+## How to run the unit test
 
-[//]: # (Some text here)
+Some text here
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Authors:
-Amelie Legault, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina Pentiuc, Helen Shortland, and Ruth Osoba
+Amelie Legault, [Angeline Calleja](https://www.linkedin.com/in/anjcalleja/), Crina Pentiuc, Helen Shortland, and [Ruth Osoba](https://www.linkedin.com/in/ruth-osoba/)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -133,6 +122,7 @@ This project is open source and all ownership rights are attributed to the autho
 ## Acknowledgments
 - Thank you very much to [Code First Girls](https://codefirstgirls.com/).
 - Thank you to Nada, Fola, Jack and all the people behind this community.
+- Congratulations to 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
