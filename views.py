@@ -6,10 +6,11 @@ from auth import User
 import requests
 from flask import Blueprint, render_template,jsonify,request,flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
-from Database.users import add_user, get_user_by_credentials, email_available
+from Database.users import add_user, get_user_by_credentials, email_available, get_user_by_id
 from Database.saved_jobs import save_job
 from config import SECRET_KEY
 from api import get_from_api, search_result
+from datetime import timedelta
 
 
 
@@ -59,17 +60,16 @@ def submit_login():
     if not current_user.is_anonymous:
         return redirect('/profile')
     email = request.form.get('email')
-    password=request.form.get('password')
-    user=get_user_by_credentials(email,password)
+    password = request.form.get('password')
+    user = get_user_by_credentials(email, password)
     if user is None:
         flash('Invalid credentials', 'error')
     else:
         user = User(user)
-        login_user(user)
+        login_user(user, remember=True, duration=timedelta(hours=2))
         return redirect('/profile')
     #in case something has gone wrong
     return redirect('/login')
-
 
 @views.get('/signup')
 def view_signup():
@@ -123,16 +123,6 @@ def job_results():
     job_list = get_from_api()
     return render_template("jobresults.html", job_list=job_list)
 
-@views.get('/jobs-title-search')
-def job_search_by_title():
-    return render_template("jobs-title-search.html")
-
-@views.get('/jobs-title-results')
-def job_result_by_title():
-    search_input = request.args.get('job')  # 'job' is from input name attribute from jobs-title-search.html
-    job_list = get_job_by_title(search_input) # a function from api.py
-    return render_template("jobs-title-results.html", data=job_list)
-
 # get jobID
 
 @views.post('/saved_job')
@@ -140,17 +130,22 @@ def save_job_id():
     jobID = request.form.get('JobID')
     response = requests.get(f'https://www.reed.co.uk/api/1.0/jobs/{jobID}',
                                auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()
-    employerId = request.form.get('employerId')
-    employerName = request.form.get('employerName')
-    expirationDate = request.form.get('expirationDate')
-    jobDescription = request.form.get('jobDescription')
-    jobId = request.form.get('jobId')
-    jobTitle = request.form.get('jobTitle')
-    jobURL = request.form.get('jobURL')
-    locationName =request.form.get('locationName')
-    maximumSalary = request.form.get('maximumSalary')
-    minimumSalary = request.form.get('minimumSalary')
-    save_job(employerId, employerName, expirationDate, jobDescription, jobId, jobTitle, jobURL, locationName,
-             maximumSalary, minimumSalary, user_ID)
-    print(response)
-    return response
+
+    user_id = current_user.id
+
+    save_job(response['employerId'],
+             response['employerName'],
+             response['expirationDate'],
+             response['jobDescription'],
+             response['jobId'],
+             response['jobTitle'],
+             response['jobUrl'],
+             response['locationName'],
+             response['maximumSalary'],
+             response['minimumSalary'],
+             user_id
+             )
+    # print(response)
+    flash('Job Saved')
+    return redirect('/profile')
+

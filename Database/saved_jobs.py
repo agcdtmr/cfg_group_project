@@ -1,9 +1,7 @@
 from Database.connection import get_database_connection
 
-
-
 def save_job(employerId: int, employerName: str, expirationDate: str, jobDescription: str, jobId: int, jobTitle: str,
-jobURL: str, locationName: str, maximumSalary: int, minimumSalary: int, user_ID):
+jobURL: str, locationName: str, maximumSalary: int, minimumSalary: int, user_ID: int):
     """
     Adds a job user wants to apply for to database
     """
@@ -12,8 +10,8 @@ jobURL: str, locationName: str, maximumSalary: int, minimumSalary: int, user_ID)
             cursor.execute("""INSERT
                                INTO saved_jobs
                                   (employerID, employerName,expirationDate, jobDescription, jobID, jobTitle,
-                                   jobURL, locationName, maximumSalary, minimumSalary, applied_for_job)
-                                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                                   jobURL, locationName, maximumSalary, minimumSalary, user_ID)
+                                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
                            [employerId, employerName, expirationDate, jobDescription, jobId, jobTitle, jobURL,
                             locationName, maximumSalary, minimumSalary, user_ID])
             connection.commit()

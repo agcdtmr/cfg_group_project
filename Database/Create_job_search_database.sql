@@ -6,7 +6,7 @@ CREATE TABLE users(user_ID INT UNIQUE PRIMARY KEY AUTO_INCREMENT, surname VARCHA
 username VARCHAR(100) UNIQUE, email VARCHAR(100) UNIQUE, password VARCHAR(100));
 
 
- CREATE TABLE saved_jobs(saved_job_ID INT UNIQUE PRIMARY KEY AUTO_INCREMENT, user_id INT UNIQUE, employerID INT, employerName VARCHAR(100),
- expirationDate DATE, jobDescription VARCHAR(5000), jobID INT, jobTitle VARCHAR(100), jobURL VARCHAR(1000),
+ CREATE TABLE saved_jobs(saved_job_ID INT UNIQUE PRIMARY KEY AUTO_INCREMENT, user_id INT, employerID INT, employerName VARCHAR(100),
+ expirationDate VARCHAR(100), jobDescription VARCHAR(5000), jobID INT, jobTitle VARCHAR(100), jobURL VARCHAR(1000),
  locationName VARCHAR(100), maximumSalary INT, minimumSalary INT, applied_for_job VARCHAR(3),
  FOREIGN KEY(user_ID) REFERENCES users(user_ID));
