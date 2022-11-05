@@ -1,5 +1,3 @@
-
-#creating the views for the webpage
 from typing import List, Dict, Any
 from requests.auth import HTTPBasicAuth
 from auth import User
@@ -11,8 +9,6 @@ from Database.saved_jobs import save_job, display_saved_jobs, save_applied_for_j
 from config import SECRET_KEY
 from api import get_from_api, search_result
 from datetime import timedelta
-
-
 
 views = Blueprint(__name__, "views")
 

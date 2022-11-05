@@ -1,7 +1,7 @@
 from unittest import TestCase
 import hashlib
 from app import app
-
+import requests
 
 class TestAPI(TestCase):
     def test_api(self):
