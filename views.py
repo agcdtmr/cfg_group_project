@@ -110,7 +110,7 @@ def submit_logout():
 
 @views.get('/profile')
 def view_profile():
-    data = (display_saved_jobs())
+    data = display_saved_jobs(current_user.id)
     return render_template("profile.html", user=current_user, data=data)
 
 
@@ -118,6 +118,9 @@ def view_profile():
 
 @views.post('/saved_job')
 def save_job_id():
+    if current_user.is_anonymous:
+        return redirect('/login')
+
     jobID = request.form.get('JobID')
     response = requests.get(f'https://www.reed.co.uk/api/1.0/jobs/{jobID}',
                                auth=HTTPBasicAuth('d71bf436-fc9f-47fb-9a1f-2035ae09c27f', '')).json()

@@ -18,7 +18,7 @@ jobURL: str, locationName: str, maximumSalary: int, minimumSalary: int, user_ID:
             connection.commit()
 
 
-def display_saved_jobs():
+def display_saved_jobs(user_id):
     with get_database_connection() as connection:
         with connection.cursor(dictionary=True) as cursor:
             cursor.execute("""SELECT sj.jobID,
@@ -28,7 +28,8 @@ def display_saved_jobs():
                                   sj.locationName AS 'Location', sj.maximumSalary AS 'Maximum Salary',
                                    sj.minimumSalary AS 'Minimum Salary',
                                     sj.applied_for_job AS 'Have I applied for this job?'
-                                    FROM saved_jobs AS sj""",)
+                                    FROM saved_jobs AS sj
+                                    WHERE sj.user_id = '%s' """, [user_id])
             retrieved_data = cursor.fetchall()
             if retrieved_data is not None:
                 return retrieved_data
