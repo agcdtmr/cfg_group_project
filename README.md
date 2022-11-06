@@ -77,9 +77,11 @@ pip install os-sys
 pip install hashlib
 ```
 
-4. Use the code in the Create_job_search_database file found in the Database directory to create the database using MySQL
+4. Use the code in the Create_job_search_database file found in the Database directory to create the database using MySQL.
 
 5. Open the repo using pycharm, go to **app.py** and run.
+
+6. Click on the web-site link now found in the run console in PyCharm to be taken to the website.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
