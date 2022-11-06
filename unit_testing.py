@@ -35,9 +35,9 @@ class TestJobEngineRegistration(TestCase):
         response=self.client.post('/signup', data={
             "first_name": "anna",
             "surname": "smith",
-            "username":"anny",
-            "email":"anny@gmail.com",
-            "password":"12345",
+            "username": "anny",
+            "email": "anny@gmail.com",
+            "password": "12345",
         }, follow_redirects=True)
         assert response.status_code == 200
 
