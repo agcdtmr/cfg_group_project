@@ -37,6 +37,7 @@ graduates and alumni, career switchers and tech newbies.
 ```
 pip install -r requirements.txt
 ```
+3. Database is built using MySQL and MySQL WorkBench
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -54,7 +55,7 @@ This section lists all the major frameworks or libraries used to put this projec
 
 ## Getting Started
 1. Go to our GitHub [repo](https://github.com/agcdtmr/cfg_group_project).
-2. Fork or clone our project to your local directory.
+2. Clone our project to your local directory.
 3. Install the python libraries below if necessary:
 - Flask
 ```
@@ -76,7 +77,9 @@ pip install os-sys
 pip install hashlib
 ```
 
-4. Open the repo using pycharm, go to **app.py** and run.
+4. Use the code in the Create_job_search_database file found in the Database directory to create the database using MySQL
+
+5. Open the repo using pycharm, go to **app.py** and run.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
